@@ -4,7 +4,7 @@
 
 /* Variáveis CSS para o tema */
 :root {
-    --color-primary: #3b82f6; /* Azul do Tailwind 'blue-600' */
+    --color-primary: #2563eb; /* Azul do Tailwind 'blue-600' */
     --color-background: #f4f4f4; /* Fundo Suave */
     --color-dark: #1f2937; /* Texto Principal (Gray-800) */
 }
