@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+/* Tenta carregar a fonte Braille (Sheets Braille) */
+@import url('https://fonts.cdnfonts.com/css/sheets-braille');
+
+/* Variáveis CSS para o tema */
+:root {
+    --color-primary: #3b82f6; /* Azul do Tailwind 'blue-600' */
+    --color-background: #f4f4f4; /* Fundo Suave */
+    --color-dark: #1f2937; /* Texto Principal (Gray-800) */
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-background);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Estilo do cabeçalho - BRANCO E CLEAN */
+header {
+    background-color: white; 
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 1rem 0;
+}
+
+nav {
+    width: 100%; 
+    color: var(--color-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo base do link: com borda transparente para estabilizar o layout */
+a {
+    text-decoration: none;
+    color: #6b7280; /* Cor padrão dos links (gray-600) */
+    transition: color 0.3s, border-bottom 0.3s;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border-bottom: 3px solid transparent; 
+}
+
+/* Estilo no hover (azul e com linha) */
+a:hover {
+    color: var(--color-primary);
+    border-bottom: 3px solid var(--color-primary); 
+}
+
+/* ** CORREÇÃO FINAL **: Estilo do link ativo. O uso de !important e a cor primária garantem que ele sobreponha qualquer outro estilo (incluindo o amarelo). */
+.active-link {
+    color: var(--color-primary) !important;
+    font-weight: bold;
+    border-bottom: 3px solid var(--color-primary) !important; /* Linha azul garantida */
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+/* ESTILO DO OUTPUT BRAILLE: Alto contraste e tamanho grande */
+.braille-output {
+    font-family: 'Sheets Braille', 'Noto Sans Braille', monospace; 
+    font-size: 4.5rem; 
+    line-height: 1.5;
+    word-break: break-all;
+    min-height: 8rem; 
+    white-space: pre-wrap;
+    background-color: var(--color-dark); 
+    color: white; 
+}
+
+/* Estilos dos Botões - O resto do CSS permanece o mesmo. */
+#send-button, #copy-button {
+    padding: 14px 28px; 
+    border: none; 
+    border-radius: 9999px; 
+    cursor: pointer; 
+    transition: background-color 0.3s, transform 0.1s;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1); 
+}
+
+#send-button {
+    background-color: var(--color-primary); 
+    color: white; 
+    box-shadow: 0 4px 0 #2563eb; 
+}
+
+#send-button:hover {
+    background-color: #2563eb; 
+}
+
+#copy-button {
+    background-color: #e5e7eb; 
+    color: var(--color-dark);
+    box-shadow: 0 4px 0 #d1d5db; 
+}
+
+#copy-button:hover {
+    background-color: #d1d5db;
+}
+
+#send-button:active, #copy-button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px #000000 !important;
+}
+
+/* Rodapé - CINZA ESCURO */
+footer {
+    background-color: #1f2937; 
+    color: white;
+    padding: 20px;
+    margin-top: auto;
+    text-align: center;
+    width: 100%;
+}

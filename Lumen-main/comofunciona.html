@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumen | Como Funciona</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Cabeçalho responsivo com links -->
+    <header class="bg-white shadow-md p-4 sticky top-0 z-10">
+        <nav class="container mx-auto flex flex-col sm:flex-row justify-center sm:justify-around items-center space-y-2 sm:space-y-0 text-sm font-medium">
+            <a href="index.html" class="text-gray-600 hover:text-blue-800 transition duration-300 rounded-lg p-2">Início</a>
+            <a href="comofunciona.html" class="text-blue-600 hover:text-blue-800 transition duration-300 rounded-lg p-2 font-bold border-b-2 border-blue-600">Como Funciona</a>
+            <a href="sobrenos.html" class="text-gray-600 hover:text-blue-800 transition duration-300 rounded-lg p-2">Sobre Nós</a>
+            <a href="acessibilidade.html" class="text-gray-600 hover:text-blue-800 transition duration-300 rounded-lg p-2">Acessibilidade</a>
+            <a href="apoiadores.html" class="text-gray-600 hover:text-blue-800 transition duration-300 rounded-lg p-2">Apoiadores</a>
+            <a href="contato.html" class="text-gray-600 hover:text-blue-800 transition duration-300 rounded-lg p-2">Contato</a>
+        </nav>
+    </header>
+    <br> <br>
+
+    <main class="flex-grow container mx-auto p-4 md:p-8">
+        <div class="bg-white shadow-xl rounded-2xl p-6 md:p-10 max-w-4xl mx-auto mt-4 space-y-8">
+            <h1 class="text-3xl font-extrabold text-gray-800 text-center">Como a Lumen Transforma Texto em Tato</h1>
+            <p class="text-lg text-gray-600 text-center">Nosso sistema é uma ponte eficiente e de baixo custo entre a tecnologia digital e a leitura tátil, utilizando comunicação em tempo real.</p>
+            
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-6">
+                    <ul class="space-y-4 list-none p-0">
+                        <li class="flex items-start space-x-3">
+                            <span class="text-blue-600 font-bold text-xl flex-shrink-0">1.</span>
+                            <div>
+                                <h3 class="font-semibold text-xl text-gray-800">Tradução Web</h3>
+                                <p class="text-gray-600">O usuário digita o texto no nosso site. O JavaScript traduz o texto instantaneamente para Braille Grau 1 (Unicode).</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="text-blue-600 font-bold text-xl flex-shrink-0">2.</span>
+                            <div>
+                                <h3 class="font-semibold text-xl text-gray-800">Comunicação WebSocket</h3>
+                                <p class="text-gray-600">A string Braille é enviada por **WebSocket** para o ESP32. Esta conexão persistente garante que o comando chegue à caixa sem atrasos.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="text-blue-600 font-bold text-xl flex-shrink-0">3.</span>
+                            <div>
+                                <h3 class="font-semibold text-xl text-gray-800">Processamento no ESP32</h3>
+                                <p class="text-gray-600">O ESP32 recebe a string, quebra o texto caractere por caractere e converte cada célula Braille em um **padrão binário** (0s e 1s).</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="text-blue-600 font-bold text-xl flex-shrink-0">4.</span>
+                            <div>
+                                <h3 class="font-semibold text-xl text-gray-800">Atuação Física</h3>
+                                <p class="text-gray-600">O ESP32 envia sinais (HIGH/LOW) para os drivers de motor/solenoides conectados, que levantam ou abaixam os pinos da célula Braille, permitindo a leitura tátil da palavra.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex justify-center items-center">
+                    <div class="p-6 bg-blue-100 rounded-xl shadow-inner w-full">
+                        <h4 class="text-center text-blue-800 font-bold mb-4">Fluxo de Dados</h4>
+                        <div class="flex flex-col items-center space-y-3">
+                            <div class="bg-blue-600 text-white p-2 rounded-lg w-full text-center">Navegador (Texto)</div>
+                            <i data-lucide="chevrons-down" class="w-6 h-6 text-gray-400"></i>
+                            <div class="bg-purple-600 text-white p-2 rounded-lg w-full text-center">WebSocket (Braille)</div>
+                            <i data-lucide="chevrons-down" class="w-6 h-6 text-gray-400"></i>
+                            <div class="bg-teal-600 text-white p-2 rounded-lg w-full text-center">ESP32 (Controle)</div>
+                            <i data-lucide="chevrons-down" class="w-6 h-6 text-gray-400"></i>
+                            <div class="bg-red-600 text-white p-2 rounded-lg w-full text-center">Célula Tátil (Saída)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="bg-gray-800 text-white text-center p-4 mt-8">
+        <p class="text-sm">© 2025 Lumen. Todos os direitos reservados.</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>
